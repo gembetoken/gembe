@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es-ES" class="theme light classic">
+    <head>
+        <base href="/el-texto-del-p-rrafo/">
+        <meta charset="utf-8">
+        <title>El texto del párrafo</title>
+        <meta name="app-name" content="export_website"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="a0684b0780c739e9.vendor.ltr.css" rel="stylesheet" integrity="sha512-JwMCpiHdk95MoUTatfaZJwstzeDnWfvWMJiwnSxZfPmgeCe4yvQDQ+ONMQjIy/Ht72r0TmlE+gvZnYRnpdLdVg==" crossorigin="anonymous">
+        <link href="e79fe5652a9ee585.ltr.css" rel="stylesheet" integrity="sha512-5FVCH4L1OZ6k+diL/LoHKjNhDWvxhZOh0S2NMBL6Y7R/tfBBXXXtQdS6DUsurCIiDIGPPzThShKt13v6j5D8Kg==" crossorigin="anonymous">
+        <link href="static_font_4.ltr.css" rel="stylesheet">
+        <link href="95e923adef719cc7.strings.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-+69qDRuPS5i8LzlByHW2iPh1xpAH8nA9CvOuaxo9r8CRnagYqlmIW4YS7T7JDB/CA6Ozx3Jw8EiDjU8QVAqtiQ==" nonce="c711975d-5e31-44e3-96bd-19669e6f8b27">
+        <link href="7591cc6f15b7ad2f.es-ES.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-o0GAe4vsdr/1BFKtaCk6BlqcfseX3mNrX8Gyedk+YhPu2LXXHNj28mJ6z1WJ3CbbeeVmqdOxK6tAFKW3Pae7IA==" nonce="c711975d-5e31-44e3-96bd-19669e6f8b27">
+        <link href="711ae617039a4910.runtime.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-Mem2tHeucUamGadlfbbfn9i8BangQqCu6sbIRB9u2k0afMDnbnDsut1eU8WkQ/mjpZZbNlS6Ilq5BKjxRxEn9A==" nonce="c711975d-5e31-44e3-96bd-19669e6f8b27">
+        <link href="8bf99e1463b687f7.vendor.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-TftQPLyUbslS8DxJ84xCjV04AoSruOS/4dL1Yu6x4jQNhuumqgRTWQaI+qZbwhK4VUrF7w3oQQ7uwjDhK8fzhw==" nonce="c711975d-5e31-44e3-96bd-19669e6f8b27">
+        <link href="d804d847f5d321a3.vendor.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-4udoFPYe5ek9ull4rZ3vRpOEMS4CSKD5cJTwhFN9Q7I90MTYg9egYafvqKLz7IIe14vr66ozFMkYn5GhNUCYHA==" nonce="c711975d-5e31-44e3-96bd-19669e6f8b27">
+        <link href="0659b97a8aa53bb1.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-gKayAd4/WGfs6vdOyiGEf8qcutSm/pPX/UQQsVSwN9qSGNy372aJQKZXmKDaEDo+QpM0vFw+Cl5icsEhT74wSA==" nonce="c711975d-5e31-44e3-96bd-19669e6f8b27">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        <meta property="og:title" content="El texto del párrafo">
+        <meta property="og:type" content="website">
+        <link rel="shortcut icon" href="images/2d0b56e7e51cf11036ad8734bdb67e2d.png">
+        <link rel="icon" href="images/e53c4bd8da5e491d9ab09e7cf0daf874.png" sizes="192x192">
+        <link rel="apple-touch-icon" href="images/725b756a69a7d4c235070e51acd85560.png" sizes="180x180">
+        <style>
+        .logo-container {
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          width: 80px;
+          height: 80px;
+          z-index: 1000;
+        }
+
+        .logo-container img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+        </style>
+        <script nonce="c711975d-5e31-44e3-96bd-19669e6f8b27">
+            document.addEventListener('contextmenu', (e) => {
+                const isMedia = ['img', 'image', 'video', 'svg', 'picture'].some(tagName => tagName.localeCompare(e.target.tagName, undefined, {
+                    sensitivity: 'base'
+                }) === 0, );
+                isMedia && e.preventDefault();
+            }
+            );
+        </script>
+        <script nonce="c711975d-5e31-44e3-96bd-19669e6f8b27">
+            const lang = navigator.language ? navigator.language : 'en';
+            window.canva_installFooter = (container) => {
+                if (!(container instanceof HTMLDivElement)) {
+                    return;
+                }
+                fetch('_footer?lang=' + encodeURIComponent(lang)).then(response => {
+                    if (response.status !== 200) {
+                        return;
+                    }
+                    response.text().then(footerStr => {
+                        const div = document.createElement('div');
+                        div.innerHTML = footerStr;
+                        for (const child of [...div.children]) {
+                            if (child.tagName.toLowerCase() !== 'script') {
+                                container.append(child);
+                            }
+                        }
+
+                        ( () => {
+                            !function(e) {
+                                "use strict";
+                                const t = document.getElementById("modal_backdrop")
+                                  , n = document.getElementById("modal")
+                                  , o = document.getElementById("captcha-form")
+                                  , c = document.getElementById("report_button")
+                                  , d = document.getElementById("form_report")
+                                  , s = document.getElementById("form_cancel")
+                                  , l = document.getElementById("form_submit_reason")
+                                  , a = document.getElementById("form_go_back")
+                                  , r = document.getElementById("form_submit_captcha")
+                                  , m = document.getElementById("form_close")
+                                  , i = document.getElementById("form_close_initial")
+                                  , u = document.getElementById("report_reason_0")
+                                  , p = document.getElementById("error_message")
+                                  , _ = document.getElementById("error_message_captcha")
+                                  , y = new Map;
+                                y.set(0, document.getElementById("form_step_terms")),
+                                y.set(1, document.getElementById("form_step_report_reason")),
+                                y.set(4, document.getElementById("form_step_report_other"));
+                                const E = document.getElementById("form_step_report_ip");
+                                E && y.set(5, E),
+                                y.set(2, document.getElementById("form_step_captcha")),
+                                y.set(3, document.getElementById("form_step_success"));
+                                const f = document.getElementById("report_reason_4")
+                                  , g = document.getElementById("form_close_ip")
+                                  , h = document.getElementById("form_go_back_ip")
+                                  , I = document.getElementById("report_reason_other")
+                                  , k = document.getElementById("form_close_other")
+                                  , w = document.getElementById("form_go_back_other");
+                                function v() {
+                                    t.classList.remove("active"),
+                                    n.classList.remove("active"),
+                                    c.classList.remove("active"),
+                                    c.focus()
+                                }
+                                function B(e) {
+                                    y.forEach(( (t, n) => {
+                                        n === e ? (t.style.display = "block",
+                                        L(t)) : t.style.display = "none"
+                                    }
+                                    ))
+                                }
+                                let b, C = !1;
+                                const T = "NETEASE" === window.C_CAPTCHA_IMPLEMENTATION ? () => b : () => {
+                                    const e = o.elements.namedItem("g-recaptcha-response");
+                                    return null == e ? void 0 : e.value
+                                }
+                                ;
+                                t.onclick = v,
+                                s.onclick = v,
+                                m.onclick = v,
+                                i.onclick = v,
+                                g && (g.onclick = v),
+                                k.onclick = v,
+                                c.onclick = function() {
+                                    y.forEach(( (e, t) => {
+                                        e.style.display = 0 === t ? "block" : "none"
+                                    }
+                                    )),
+                                    t.classList.add("active"),
+                                    n.classList.add("active"),
+                                    c.classList.add("active"),
+                                    u.checked = !0,
+                                    setTimeout(( () => {
+                                        L(y.get(0))
+                                    }
+                                    ), 350)
+                                }
+                                ,
+                                d.onclick = d.dataset.reportUrl ? function() {
+                                    const {origin: e, pathname: t} = window.location
+                                      , n = e + t
+                                      , o = d.dataset.reportUrl + encodeURIComponent(n);
+                                    window.open(o)
+                                }
+                                : () => B(1),
+                                l.onclick = () => {
+                                    null != E && f.checked ? B(5) : I.checked ? B(4) : (B(2),
+                                    function() {
+                                        if (C)
+                                            return;
+                                        const e = document.createElement("script");
+                                        e.src = "NETEASE" === window.C_CAPTCHA_IMPLEMENTATION ? "https://cstaticdun.126.net/load.min.js" : "https://www.google.com/recaptcha/api.js",
+                                        e.async = !0,
+                                        e.defer = !0,
+                                        document.head.appendChild(e),
+                                        C = !0,
+                                        e.onload = "NETEASE" === window.C_CAPTCHA_IMPLEMENTATION ? () => {
+                                            var e;
+                                            null === (e = window.initNECaptcha) || void 0 === e || e.call(window, {
+                                                captchaId: window.C_CAPTCHA_KEY,
+                                                element: "#netease-captcha",
+                                                protocol: "https",
+                                                width: "auto",
+                                                onVerify: (e, t) => {
+                                                    b = t.validate
+                                                }
+                                            })
+                                        }
+                                        : () => {}
+                                    }())
+                                }
+                                ,
+                                a.onclick = () => B(1),
+                                h && (h.onclick = () => B(1)),
+                                w.onclick = () => B(1),
+                                o.addEventListener("submit", (function(e) {
+                                    e.preventDefault(),
+                                    p.style.display = "none",
+                                    _.style.display = "none";
+                                    const t = function() {
+                                        let e = "";
+                                        const t = document.getElementsByName("report_reason");
+                                        for (let n = 0; n < t.length; n++) {
+                                            const o = t[n];
+                                            o.checked && (e = o.value)
+                                        }
+                                        return e
+                                    }()
+                                      , n = T();
+                                    if (!n)
+                                        return void (_.style.display = "block");
+                                    const o = {
+                                        reason: t,
+                                        challenge: n
+                                    }
+                                      , c = window.location.origin + window.location.pathname + "/_api/report";
+                                    r.classList.add("loading"),
+                                    fetch(c, {
+                                        method: "POST",
+                                        body: JSON.stringify(o),
+                                        headers: {
+                                            "Content-Type": "application/json; charset=utf-8"
+                                        }
+                                    }).then((e => {
+                                        r.classList.remove("loading"),
+                                        e.ok ? B(3) : p.style.display = "block"
+                                    }
+                                    ))
+                                }
+                                ));
+                                const A = new Map
+                                  , L = e => {
+                                    const t = A.get(e);
+                                    null != t && document.removeEventListener("keydown", t);
+                                    const n = e.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+                                      , o = e
+                                      , c = n[n.length - 1]
+                                      , d = function(e) {
+                                        ("Tab" === e.key || 9 === e.keyCode) && (e.shiftKey ? document.activeElement === o && (c.focus(),
+                                        e.preventDefault()) : document.activeElement === c && (o.focus(),
+                                        e.preventDefault()))
+                                    };
+                                    A.set(e, d),
+                                    document.addEventListener("keydown", d),
+                                    o.focus()
+                                }
+                                ;
+                                e.keepFocus = L,
+                                Object.defineProperty(e, "__esModule", {
+                                    value: !0
+                                })
+                            }({});
+                        }
+                        )();
+                    }
+                    );
+                }
+                );
+            }
+        </script>
+        <script nonce="c711975d-5e31-44e3-96bd-19669e6f8b27">
+            window.C_CAPTCHA_IMPLEMENTATION = 'RECAPTCHA';
+        </script>
+        <script nonce="c711975d-5e31-44e3-96bd-19669e6f8b27">
+            window.C_CAPTCHA_KEY = '6Ldk59waAAAAAMPqkICbJjfMivZLCGtTpa6Wn6zO';
+        </script>
+    </head>
+    <body>
+        <div class="logo-container">
+          <img src="/CC_20241114_163008.png" alt="Logo Shina" title="Gorilla Face Logo">
+        </div>
+        <script nonce="c711975d-5e31-44e3-96bd-19669e6f8b27">
+            document.documentElement.classList.replace('adaptive', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        </script>
+        <div id="root"></div>
+        <script nonce="c711975d-5e31-44e3-96bd-19669e6f8b27">
+            (function() {
+                window['__canva_public_path__'] = '';
+                window['bootstrap'] = JSON.parse('{"base":{"A?":"B","L":false,"N":false,"E":"9c43f452005b0d0316d0a0b62a037bb7b6e2a8b3","K":1732981319,"F":{"A?":"B"},"G":"CLIENT_FULL","I":"A","O":{"A?":"B"},"M":"/_online","U":[],"V":[],"g":false,"i":false,"a":{"K":"export_website","H":{}},"d":{"A":"wss://www.canva.com/_stream","B":{"F":"export_website"}},"b":{"A?":"H","C":{"a":"WEB"},"D":{"a":"WEB","c":"es-ES"},"E":{},"P":[],"Q":[],"R":false,"S":false}},"page":{"A":{"B":{"A?":"A","A":"TAEXfxtKgiU","B":1},"C":{"A":1366.0,"B":768.0,"C":"D"},"Q":[],"R":[],"P":"es-ES","D":"El texto del párrafo","E":"","F":[],"G":{},"Y":{},"V":[],"W":[],"A":[{"A?":"i","a":"PByvpJysrfrrBzP6","R":false,"S":false,"U":false,"Q":{},"W":[],"X":[],"H":[],"L":{},"D":{"C":"#f6c710","D":0.0,"F":false,"J":false,"G":false,"H":false},"r":[],"E":[{"A?":"I","A":16.67049888196533,"B":4.670498881965358,"D":60.129501118034646,"C":60.129501118034646,"E":0.0,"F":0.0,"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"B":{"A":{"A":"MAGSp_6k1gg","B":1},"B":{"A":0.0,"B":0.0,"D":60.129501118034646,"C":60.129501118034646,"E":0.0},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":false,"H":false},"e":[]},{"A?":"I","A":28.733306666666635,"B":1301.6,"D":49.86666666666674,"C":49.86666666666674,"E":0.0,"F":0.0,"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"A":false,"B":{"A":{"A":"MAE9MHbwTTM","B":1},"B":{"A":0.0,"B":0.0,"D":49.86666666666674,"C":49.86666666666674,"E":0.0},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":false,"H":false},"e":[]},{"A?":"I","A":30.733306666666678,"B":1241.3333333333333,"D":47.86666666666669,"C":47.86666666666669,"E":0.0,"F":0.0,"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"A":false,"B":{"A":{"A":"MAE9MOa_Ldk","B":1},"B":{"A":0.0,"B":0.0,"D":47.86666666666669,"C":47.86666666666669,"E":0.0},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":false,"H":false},"e":[]},{"A?":"K","A":30.53327999999999,"B":64.80000000000001,"D":135.97222900390625,"C":46.26672,"E":0.0,"F":0.0,"Q":false,"S":false,"2":{"A":"","B":false},"P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"GORIRA\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"center"},"font-size":{"B":"38.6664"},"font-family":{"B":"YADK30bC6HQ,0"}}},{"A?":"B","A":6},{"A?":"A","A":{"color":{"B":"#000000"},"spacing":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"font-family":{},"color":{},"text-align":{},"spacing":{},"font-size":{}}}]},"b":{"A":[7]},"d":"A","l":false,"g":false,"h":"B"},{"A?":"K","A":357.33333333333326,"B":485.65278116861975,"D":373.50430461319735,"C":127.09079792931145,"E":0.0,"F":0.0,"Q":false,"S":false,"2":{"A":"","B":false},"P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"GORIRA\\n"}],"B":[{"A?":"A","A":{"font-size":{"B":"38.6664"},"font-family":{"B":"YADK30bC6HQ,0"},"text-align":{"B":"center"}}},{"A?":"B","A":6},{"A?":"A","A":{"spacing":{"B":"0.0"},"color":{"B":"#000000"}}},{"A?":"B","A":1},{"A?":"A","A":{"font-size":{},"font-family":{},"text-align":{},"spacing":{},"color":{}}}]},"b":{"A":[7]},"d":"A","e":135.97222900390625,"f":46.26672,"l":false,"h":"B"},{"A?":"K","A":484.42413126264466,"B":495.43055725097656,"D":375.1388854980469,"C":50.46666,"E":0.0,"F":0.0,"Q":false,"S":false,"2":{"A":"","B":false},"P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Añadir un subtítulo\\n"}],"B":[{"A?":"A","A":{"color":{"B":"#000000"},"font-family":{"B":"YADK30bC6HQ,0"},"font-size":{"B":"42.6667"},"text-align":{"B":"center"}}},{"A?":"B","A":20},{"A?":"A","A":{"color":{},"font-family":{},"font-size":{},"text-align":{}}}]},"b":{"A":[20]},"d":"A","l":false,"h":"B"},{"A?":"K","A":574.1999733333334,"B":502.0785479771715,"D":340.65277099609375,"C":46.26672,"E":0.0,"F":0.0,"Q":false,"S":false,"2":{"A":"","B":false},"P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"El texto del párrafo\\n"}],"B":[{"A?":"A","A":{"font-size":{"B":"38.6664"},"text-align":{"B":"center"},"spacing":{"B":"0.0"},"font-family":{"B":"YADK30bC6HQ,0"},"font-weight":{"B":"normal"},"font-style":{"B":"normal"},"text-transform":{"B":"none"},"leading":{"B":"1400.0"},"tracking":{"B":"0.0"},"color":{"B":"#000000"}}},{"A?":"B","A":21},{"A?":"A","A":{"font-size":{},"text-align":{},"spacing":{},"font-family":{},"font-weight":{},"font-style":{},"text-transform":{},"leading":{},"tracking":{},"color":{}}}]},"b":{"A":[21]},"d":"A","l":false,"h":"B"}],"I":[]}],"I":[]},"P":{"A?":"A","U":true,"V":false},"B":[{"A":"YACgEZ1cb1Q","B":0,"C":"Arimo","D":[{"style":"REGULAR","files":[{"url":"fonts/4ff8a742aa834e35f10ead140b735c45.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234380},{"url":"fonts/daee28464eba92254cb149feea6599e3.otf","format":"OTF","unicodeRanges":[],"sizeBytes":436180},{"url":"fonts/f8f199f09526f79e87644ed227e0f651.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":194188}],"subsettedFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2007},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":64}}},{"style":"BOLD_ITALICS","files":[{"url":"fonts/7fc2786f9023d4d812357cb787e9ad4b.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":237660},{"url":"fonts/1060345c54d396e76d73f1da7ee200bd.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":203232},{"url":"fonts/4de29305db46625343735e840e3d27aa.otf","format":"OTF","unicodeRanges":[],"sizeBytes":435028}],"subsettedFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2109},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":33}}},{"style":"ITALICS","files":[{"url":"fonts/d257a7100844bc3f98c9021168b6249e.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":201132},{"url":"fonts/ac9b8a560f98d1757a4565a2419d33c3.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":240632},{"url":"fonts/79d14bb61301a10c73c6cb293c29b309.otf","format":"OTF","unicodeRanges":[],"sizeBytes":440740}],"subsettedFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2077},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-425,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":1}}},{"style":"BOLD","files":[{"url":"fonts/0bb563f2f60ffd4e62b64cb021c33776.otf","format":"OTF","unicodeRanges":[],"sizeBytes":438516},{"url":"fonts/9fd726aeae98b22824f0dc8947036e77.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234696},{"url":"fonts/98c4d2c0223fc8474641c77f923528e9.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":194064}],"subsettedFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2116},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":32}}}],"E":false},{"A":"YADK30bC6HQ","B":0,"C":"Baloo","D":[{"style":"REGULAR","files":[{"url":"fonts/93752b58b1d2f006fcbc628e7382515f.otf","format":"OTF","unicodeRanges":[],"sizeBytes":629756},{"url":"fonts/a01cf65284d10867614628ea3235036d.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":215592},{"url":"fonts/f701998dcaa47b84f823e81a9807ae0b.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":180396}],"subsettedFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-524,"yMax":1050},"hhea":{"ascender":1050,"descender":-524,"lineGap":0},"os2":{"sTypoAscender":1050,"sTypoDescender":-524,"sTypoLineGap":0,"usWinAscent":1050,"usWinDescent":524,"fsSelection":64}}}],"E":true}],"E":[{"type":"VECTOR","id":"MAE9MOa_Ldk","version":1,"files":[{"url":"media/e05b25f4d46e0b4f1e47a8fc94d542c4.svg","urlDenied":false,"width":237,"height":237,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN","mimeType":"image/svg+xml"}]},{"type":"VECTOR","id":"MAE9MOa_Ldk","version":1,"files":[{"url":"media/e05b25f4d46e0b4f1e47a8fc94d542c4.svg","urlDenied":false,"width":237,"height":237,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_2X","mimeType":"image/svg+xml"}]},{"type":"VECTOR","id":"MAE9MOa_Ldk","version":1,"files":[{"url":"media/e05b25f4d46e0b4f1e47a8fc94d542c4.svg","urlDenied":false,"width":237,"height":237,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_3X","mimeType":"image/svg+xml"}]},{"type":"RASTER","id":"MAGSp_6k1gg","version":1,"files":[{"url":"media/5e88d1cffbe585eab2bfb48025efb2b1.png","urlDenied":false,"width":800,"height":800,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN","mimeType":"image/png"}]},{"type":"RASTER","id":"MAGSp_6k1gg","version":1,"files":[{"url":"media/065d298235554057fed1548b8a2f7f3f.png","urlDenied":false,"width":1024,"height":1024,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_2X","mimeType":"image/png"}]},{"type":"RASTER","id":"MAGSp_6k1gg","version":1,"files":[{"url":"media/065d298235554057fed1548b8a2f7f3f.png","urlDenied":false,"width":1024,"height":1024,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_3X","mimeType":"image/png"}]},{"type":"VECTOR","id":"MAE9MHbwTTM","version":1,"files":[{"url":"media/3eee4c29df7187b19c6f9865094b6472.svg","urlDenied":false,"width":237,"height":237,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN","mimeType":"image/svg+xml"}]},{"type":"VECTOR","id":"MAE9MHbwTTM","version":1,"files":[{"url":"media/3eee4c29df7187b19c6f9865094b6472.svg","urlDenied":false,"width":237,"height":237,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_2X","mimeType":"image/svg+xml"}]},{"type":"VECTOR","id":"MAE9MHbwTTM","version":1,"files":[{"url":"media/3eee4c29df7187b19c6f9865094b6472.svg","urlDenied":false,"width":237,"height":237,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_3X","mimeType":"image/svg+xml"}]}],"F":[],"G":[],"H":[],"K":{},"Q":{"A":false,"B":true,"M":true},"R":false},"ui":{"N":false,"A":true,"B":"A","C":false,"D":false,"K":"A","I":false,"J":false}}');
+                window['flags'] = JSON.parse('{}');
+                window['cmsg'] = window['cmsg'] || {
+                    locale: "es-ES",
+                    strings: {}
+                };
+            }
+            )();
+        </script>
+        <script crossorigin="anonymous" src="95e923adef719cc7.strings.js" integrity="sha512-+69qDRuPS5i8LzlByHW2iPh1xpAH8nA9CvOuaxo9r8CRnagYqlmIW4YS7T7JDB/CA6Ozx3Jw8EiDjU8QVAqtiQ==" nonce="c711975d-5e31-44e3-96bd-19669e6f8b27"></script>
+        <script crossorigin="anonymous" src="7591cc6f15b7ad2f.es-ES.js" integrity="sha512-o0GAe4vsdr/1BFKtaCk6BlqcfseX3mNrX8Gyedk+YhPu2LXXHNj28mJ6z1WJ3CbbeeVmqdOxK6tAFKW3Pae7IA==" nonce="c711975d-5e31-44e3-96bd-19669e6f8b27"></script>
+        <script crossorigin="anonymous" src="711ae617039a4910.runtime.js" defer integrity="sha512-Mem2tHeucUamGadlfbbfn9i8BangQqCu6sbIRB9u2k0afMDnbnDsut1eU8WkQ/mjpZZbNlS6Ilq5BKjxRxEn9A==" nonce="c711975d-5e31-44e3-96bd-19669e6f8b27"></script>
+        <script crossorigin="anonymous" src="8bf99e1463b687f7.vendor.js" defer integrity="sha512-TftQPLyUbslS8DxJ84xCjV04AoSruOS/4dL1Yu6x4jQNhuumqgRTWQaI+qZbwhK4VUrF7w3oQQ7uwjDhK8fzhw==" nonce="c711975d-5e31-44e3-96bd-19669e6f8b27"></script>
+        <script crossorigin="anonymous" src="d804d847f5d321a3.vendor.js" defer integrity="sha512-4udoFPYe5ek9ull4rZ3vRpOEMS4CSKD5cJTwhFN9Q7I90MTYg9egYafvqKLz7IIe14vr66ozFMkYn5GhNUCYHA==" nonce="c711975d-5e31-44e3-96bd-19669e6f8b27"></script>
+        <script crossorigin="anonymous" src="0659b97a8aa53bb1.js" defer integrity="sha512-gKayAd4/WGfs6vdOyiGEf8qcutSm/pPX/UQQsVSwN9qSGNy372aJQKZXmKDaEDo+QpM0vFw+Cl5icsEhT74wSA==" nonce="c711975d-5e31-44e3-96bd-19669e6f8b27"></script>
+    </body>
+</html>
