@@ -118,7 +118,13 @@
   .meme {
     position: absolute;
     animation: float 20s linear infinite;
+  }
+
+  .meme img {
+    width: 50px;
+    height: 50px;
     opacity: 0.1;
+    border-radius: 50%;
   }
 
   @keyframes float {
@@ -184,7 +190,7 @@
     align-items: center;
     padding: 1rem 2rem;
     z-index: 1000;
-    background: rgba(26, 26, 26, 0.8);
+    background: #1a1a1a; /* Changed to solid background */
   }
 
   .header-socials {
@@ -277,6 +283,22 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
     text-align: center;
   }
+
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+  }
+
+  .nav-link:hover {
+    color: #00ff88;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Accounts for fixed header */
+  }
 </style>
 </head>
 <body>
@@ -286,28 +308,35 @@
     <img src="Logopit_1734211245312.png" alt="Logo" class="header-logo">
     <span style="color: #00ff88; font-size: 24px; margin-left: 10px; font-weight: bold;">Gembe</span>
   </div>
-  <div class="header-socials">
-    <a href="https://twitter.com/memefrog" target="_blank">
-      <svg class="social-icon" viewBox="0 0 24 24">
-        <path fill="white" d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
-      </svg>
-    </a>
-    <a href="https://t.me/memefrog" target="_blank">
-      <svg class="social-icon" viewBox="0 0 24 24">
-        <path fill="white" d="M18.384,22.779c0.322,0.228 0.737,0.285 1.107,0.145c0.37,-0.141 0.642,-0.457 0.724,-0.84c0.869,-4.084 2.977,-14.421 3.768,-18.136c0.06,-0.28 -0.04,-0.571 -0.26,-0.758c-0.22,-0.187 -0.525,-0.241 -0.797,-0.14c-4.193,1.552 -17.106,6.397 -22.384,8.35c-0.335,0.124 -0.553,0.446 -0.542,0.799c0.012,0.354 0.25,0.661 0.593,0.764c2.367,0.708 5.474,1.693 5.474,1.693c0,0 1.452,4.385 2.209,6.615c0.095,0.28 0.314,0.5 0.603,0.576c0.288,0.075 0.596,-0.004 0.811,-0.207c1.216,-1.148 3.096,-2.923 3.096,-2.923c0,0 3.572,2.619 5.598,4.062Zm-11.01,-8.677l1.679,5.538l0.373,-3.507c0,0 6.487,-5.851 10.185,-9.186c0.108,-0.098 0.123,-0.262 0.033,-0.377c-0.089,-0.115 -0.253,-0.142 -0.376,-0.064c-4.286,2.737 -11.894,7.596 -11.894,7.596Z"/>
-      </svg>
-    </a>
+  <div style="display: flex; align-items: center; gap: 2rem;">
+    <nav style="display: flex; gap: 2rem;">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#tokenomics" class="nav-link">Tokenomics</a>
+      <a href="#roadmap" class="nav-link">Roadmap</a>
+    </nav>
+    <div class="header-socials">
+      <a href="https://twitter.com/memefrog" target="_blank">
+        <svg class="social-icon" viewBox="0 0 24 24">
+          <path fill="white" d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+        </svg>
+      </a>
+      <a href="https://t.me/memefrog" target="_blank">
+        <svg class="social-icon" viewBox="0 0 24 24">
+          <path fill="white" d="M18.384,22.779c0.322,0.228 0.737,0.285 1.107,0.145c0.37,-0.141 0.642,-0.457 0.724,-0.84c0.869,-4.084 2.977,-14.421 3.768,-18.136c0.06,-0.28 -0.04,-0.571 -0.26,-0.758c-0.22,-0.187 -0.525,-0.241 -0.797,-0.14c-4.193,1.552 -17.106,6.397 -22.384,8.35c-0.335,0.124 -0.553,0.446 -0.542,0.799c0.012,0.354 0.25,0.661 0.593,0.764c2.367,0.708 5.474,1.693 5.474,1.693c0,0 1.452,4.385 2.209,6.615c0.095,0.28 0.314,0.5 0.603,0.576c0.288,0.075 0.596,-0.004 0.811,-0.207c1.216,-1.148 3.096,-2.923 3.096,-2.923c0,0 3.572,2.619 5.598,4.062Zm-11.01,-8.677l1.679,5.538l0.373,-3.507c0,0 6.487,-5.851 10.185,-9.186c0.108,-0.098 0.123,-0.262 0.033,-0.377c-0.089,-0.115 -0.253,-0.142 -0.376,-0.064c-4.286,2.737 -11.894,7.596 -11.894,7.596Z"/>
+        </svg>
+      </a>
+    </div>
   </div>
 </div>
 
 <div class="hero">
   <div class="floating-memes"></div>
-  <h1>$GEMBE</h1>
+  <h1>$MEMEFROG</h1>
   <p>The Most Ribbiting Token in Crypto!</p>
 </div>
 
 <div class="about" id="about">
-  <h2 class="section-title">About $MEMEFROG</h2>
+  <h2 class="section-title">About</h2>
   <div class="about-content">
     <p>We opted for Polygon due to its speed, scalability, and incredibly low transaction costs. Thanks to these advantages, Gembe offers a fluid and accessible experience for all our users. Furthermore, being integrated with Ethereum, Polygon connects us to a strong and constantly expanding ecosystem, allowing us to continue growing without problems. With Polygon, your transactions are quick and inexpensive, ensuring that enjoying Gembe is even easier and more fun..</p>
     <br>
@@ -449,8 +478,8 @@
 </div>
 
 <div class="footer">
-  <p>Contact us: <a href="mailto:info@gembetoken.com">info@gembetoken.com</a></p>
-  <p>Copyright © 2024 - All rights reserved by Gembe</p>
+  <p>Contact us: <a href="mailto:polmoon@proton.me">polmoon@proton.me</a></p>
+  <p>Copyright © 2024 - All rights reserved by $PMOON</p>
 </div>
 
 <script>
@@ -462,19 +491,13 @@ const createFloatingMemes = () => {
     const meme = document.createElement('div');
     meme.classList.add('meme');
     
-    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svg.setAttribute('viewBox', '0 0 50 50');
-    svg.setAttribute('width', '50');
-    svg.setAttribute('height', '50');
+    // Create image element instead of SVG
+    const img = document.createElement('img');
+    img.src = "Logopit_1734211245312.png";
+    img.style.width = '50px';
+    img.style.height = '50px';
     
-    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    circle.setAttribute('cx', '25');
-    circle.setAttribute('cy', '25');
-    circle.setAttribute('r', '20');
-    circle.setAttribute('fill', '#ffffff');
-    
-    svg.appendChild(circle);
-    meme.appendChild(svg);
+    meme.appendChild(img);
     
     meme.style.left = `${Math.random() * 100}vw`;
     meme.style.animationDelay = `${Math.random() * 20}s`;
@@ -492,6 +515,20 @@ document.querySelectorAll('.pie-segment').forEach(segment => {
   });
   segment.addEventListener('mouseout', () => {
     segment.style.opacity = '1';
+  });
+});
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
   });
 });
 </script>
