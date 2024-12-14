@@ -1,0 +1,500 @@
+<html><head><base href="/" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>$MEMEFROC - The Most Ribbiting Token Ever!</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  body {
+    background: #1a1a1a;
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  .hero, .about, .tokenomics, .roadmap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+  }
+
+  .hero {
+    background: linear-gradient(45deg, #00ff88, #00cc99);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about, .tokenomics, .roadmap {
+    background: #1a1a1a;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #00ff88;
+  }
+
+  .about-content {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .tokenomics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  .tokenomics-item {
+    background: rgba(0, 255, 136, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+  }
+
+  .chart-container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin: 2rem auto;
+  }
+
+  .pie-segment {
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+  }
+
+  .pie-segment:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(0,0,0,0.5));
+  }
+
+  .pie-label {
+    font-size: 16px;
+    fill: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .contract-address {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 0.9rem;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .floating-memes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .meme {
+    position: absolute;
+    animation: float 20s linear infinite;
+    opacity: 0.1;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(360deg); }
+  }
+
+  .socials {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    fill: white;
+    transition: transform 0.3s;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.2);
+  }
+
+  .roadmap {
+    background: #1a1a1a;
+    position: relative;
+  }
+
+  .roadmap-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .phase-card {
+    background: rgba(0, 255, 136, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    position: relative;
+    transition: transform 0.3s;
+  }
+
+  .phase-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .phase-title {
+    color: #00ff88;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    background: rgba(26, 26, 26, 0.8);
+  }
+
+  .header-socials {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .header-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .header .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .footer {
+    background: #1a1a1a;
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer p {
+    color: #999;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+
+  .footer a {
+    color: #00ff88;
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .token-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  .token-detail-item {
+    background: rgba(0, 255, 136, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .token-detail-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .token-detail-item h3 {
+    color: #00ff88;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .token-detail-item p {
+    font-size: 1.1rem;
+    word-break: break-all;
+  }
+
+  .contract-text {
+    font-family: monospace;
+    word-break: break-all;
+    font-size: 0.9rem !important;
+  }
+
+  .hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <svg class="header-logo" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="40" fill="#00ff88"/>
+    <circle cx="35" cy="40" r="10" fill="white"/>
+    <circle cx="65" cy="40" r="10" fill="white"/>
+    <circle cx="35" cy="40" r="5" fill="black"/>
+    <circle cx="65" cy="40" r="5" fill="black"/>
+    <path d="M 30 60 Q 50 70 70 60" fill="none" stroke="black" stroke-width="3"/>
+  </svg>
+  <div class="header-socials">
+    <a href="https://twitter.com/memefrog" target="_blank">
+      <svg class="social-icon" viewBox="0 0 24 24">
+        <path fill="white" d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+      </svg>
+    </a>
+    <a href="https://t.me/memefrog" target="_blank">
+      <svg class="social-icon" viewBox="0 0 24 24">
+        <path fill="white" d="M18.384,22.779c0.322,0.228 0.737,0.285 1.107,0.145c0.37,-0.141 0.642,-0.457 0.724,-0.84c0.869,-4.084 2.977,-14.421 3.768,-18.136c0.06,-0.28 -0.04,-0.571 -0.26,-0.758c-0.22,-0.187 -0.525,-0.241 -0.797,-0.14c-4.193,1.552 -17.106,6.397 -22.384,8.35c-0.335,0.124 -0.553,0.446 -0.542,0.799c0.012,0.354 0.25,0.661 0.593,0.764c2.367,0.708 5.474,1.693 5.474,1.693c0,0 1.452,4.385 2.209,6.615c0.095,0.28 0.314,0.5 0.603,0.576c0.288,0.075 0.596,-0.004 0.811,-0.207c1.216,-1.148 3.096,-2.923 3.096,-2.923c0,0 3.572,2.619 5.598,4.062Zm-11.01,-8.677l1.679,5.538l0.373,-3.507c0,0 6.487,-5.851 10.185,-9.186c0.108,-0.098 0.123,-0.262 0.033,-0.377c-0.089,-0.115 -0.253,-0.142 -0.376,-0.064c-4.286,2.737 -11.894,7.596 -11.894,7.596Z"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="floating-memes"></div>
+  <h1>$MEMEFROG</h1>
+  <p>The Most Ribbiting Token in Crypto!</p>
+</div>
+
+<div class="about" id="about">
+  <h2 class="section-title">About $MEMEFROG</h2>
+  <div class="about-content">
+    <p>$MEMEFROG is not just another meme coin - it's a revolution in the amphibian cryptocurrency space! Born from the swamps of blockchain innovation, our mission is to bring joy, laughter, and incredible gains to our community.</p>
+    <br>
+    <p>With our unique "Lily Pad" staking system and "Tadpole" reward mechanism, we're creating an ecosystem that's both fun and rewarding for our holders.</p>
+  </div>
+</div>
+
+<div class="tokenomics" id="tokenomics">
+  <h2 class="section-title">Tokenomics</h2>
+  <div class="chart-container">
+    <svg viewBox="0 0 100 100">
+      <!-- Background circle -->
+      <circle cx="50" cy="50" r="45" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+      
+      <!-- Liquidity Pool - 65% -->
+      <path class="pie-segment" 
+            d="M50,50 L95,50 A45,45 0 1,1 27.5,6.5 L50,50"
+            fill="#00ff88"
+            stroke="#1a1a1a"
+            stroke-width="1">
+        <title>Liquidity Pool: 65%</title>
+      </path>
+      
+      <!-- Airdrop - 10% -->
+      <path class="pie-segment"
+            d="M50,50 L27.5,6.5 A45,45 0 0,1 50.5,5 L50,50"
+            fill="#ff3366"
+            stroke="#1a1a1a"
+            stroke-width="1">
+        <title>Airdrop: 10%</title>
+      </path>
+      
+      <!-- Marketing - 7.5% -->
+      <path class="pie-segment"
+            d="M50,50 L50.5,5 A45,45 0 0,1 69,11 L50,50"
+            fill="#00ccff"
+            stroke="#1a1a1a"
+            stroke-width="1">
+        <title>Marketing: 7.5%</title>
+      </path>
+      
+      <!-- Team - 7.5% -->
+      <path class="pie-segment"
+            d="M50,50 L69,11 A45,45 0 0,1 95,50 L50,50"
+            fill="#ffcc00"
+            stroke="#1a1a1a"
+            stroke-width="1">
+        <title>Team: 7.5%</title>
+      </path>
+
+      <!-- Center circle -->
+      <circle cx="50" cy="50" r="25" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+      
+      <!-- Labels -->
+      <text x="50" y="45" class="pie-label" text-anchor="middle">Total</text>
+      <text x="50" y="60" class="pie-label" text-anchor="middle">Supply</text>
+    </svg>
+  </div>
+  <div class="token-details">
+    <div class="token-detail-item">
+      <h3>Name</h3>
+      <p>GMAS</p>
+    </div>
+    <div class="token-detail-item">
+      <h3>Symbol</h3>
+      <p>GMS</p>
+    </div>
+    <div class="token-detail-item">
+      <h3>Total Supply</h3>
+      <p>420T</p>
+    </div>
+    <div class="token-detail-item">
+      <h3>Contract</h3>
+      <p class="contract-text">adfgadfglihlsdhlidkadliadvhskjd51s</p>
+    </div>
+    <div class="token-detail-item">
+      <h3>Tax</h3>
+      <p>0%</p>
+    </div>
+  </div>
+  <div class="tokenomics-grid">
+    <div class="tokenomics-item">
+      <h3>Liquidity Pool</h3>
+      <p>65%</p>
+      <p>Locked for 1 year</p>
+      <p>Ensuring stable trading and long-term sustainability</p>
+    </div>
+    <div class="tokenomics-item">
+      <h3>Airdrop</h3>
+      <p>10%</p>
+      <p>Community Distribution</p>
+      <p>Rewarding early supporters and building community</p>
+    </div>
+    <div class="tokenomics-item">
+      <h3>Marketing</h3>
+      <p>7.5%</p>
+      <p>For growth & development</p>
+      <p>Strategic promotion and partnerships</p>
+    </div>
+    <div class="tokenomics-item">
+      <h3>Team</h3>
+      <p>7.5%</p>
+      <p>Vested for 6 months</p>
+      <p>Long-term project development and maintenance</p>
+    </div>
+  </div>
+</div>
+
+<div class="roadmap" id="roadmap">
+  <h2 class="section-title">Roadmap</h2>
+  <div class="roadmap-container">
+    <div class="phase-card">
+      <h3 class="phase-title">Phase 1: Meme</h3>
+      <svg width="50" height="50" viewBox="0 0 50 50" style="float: right">
+        <circle cx="25" cy="25" r="20" fill="#00ff88" opacity="0.3"/>
+        <path d="M15 25 L22 32 L35 18" stroke="#00ff88" stroke-width="3" fill="none"/>
+      </svg>
+      <p>Launch our viral meme campaign and establish $MEMEFROG as the most ribbiting token in the cryptosphere!</p>
+    </div>
+    
+    <div class="phase-card">
+      <h3 class="phase-title">Phase 2: Vibe and HODL</h3>
+      <svg width="50" height="50" viewBox="0 0 50 50" style="float: right">
+        <circle cx="25" cy="25" r="20" fill="#00ff88" opacity="0.3"/>
+        <path d="M20 25 L25 15 L30 25 L25 35 Z" fill="#00ff88"/>
+      </svg>
+      <p>Build our community of diamond-handed frogs and create the strongest vibe in crypto!</p>
+    </div>
+    
+    <div class="phase-card">
+      <h3 class="phase-title">Phase 3: Meme Takeover</h3>
+      <svg width="50" height="50" viewBox="0 0 50 50" style="float: right">
+        <circle cx="25" cy="25" r="20" fill="#00ff88" opacity="0.3"/>
+        <path d="M25 15 L35 30 H15 Z" fill="#00ff88"/>
+      </svg>
+      <p>Complete global meme dominance as $MEMEFROG becomes the ultimate cryptocurrency meme!</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Contact us: <a href="mailto:polmoon@proton.me">polmoon@proton.me</a></p>
+  <p>Copyright © 2024 - All rights reserved by $PMOON</p>
+</div>
+
+<script>
+const createFloatingMemes = () => {
+  const memeContainer = document.querySelector('.floating-memes');
+  const memeCount = 20;
+
+  for (let i = 0; i < memeCount; i++) {
+    const meme = document.createElement('div');
+    meme.classList.add('meme');
+    
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute('viewBox', '0 0 50 50');
+    svg.setAttribute('width', '50');
+    svg.setAttribute('height', '50');
+    
+    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    circle.setAttribute('cx', '25');
+    circle.setAttribute('cy', '25');
+    circle.setAttribute('r', '20');
+    circle.setAttribute('fill', '#ffffff');
+    
+    svg.appendChild(circle);
+    meme.appendChild(svg);
+    
+    meme.style.left = `${Math.random() * 100}vw`;
+    meme.style.animationDelay = `${Math.random() * 20}s`;
+    
+    memeContainer.appendChild(meme);
+  }
+};
+
+createFloatingMemes();
+
+// Add hover effects for pie chart segments
+document.querySelectorAll('.pie-segment').forEach(segment => {
+  segment.addEventListener('mouseover', () => {
+    segment.style.opacity = '0.8';
+  });
+  segment.addEventListener('mouseout', () => {
+    segment.style.opacity = '1';
+  });
+});
+</script>
+
+</body></html>
