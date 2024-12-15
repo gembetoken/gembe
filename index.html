@@ -17,6 +17,11 @@
     overflow-x: hidden;
   }
 
+  :root {
+    --primary-color: #6E0FFF; /* New purple color to match logo */
+    --secondary-color: #7C34EB; /* Keeping the green accent */
+  }
+
   .hero, .about, .tokenomics, .roadmap {
     min-height: 100vh;
     display: flex;
@@ -27,7 +32,7 @@
   }
 
   .hero {
-    background: linear-gradient(45deg, #6E0FFF, #6001F1);
+    background: linear-gradient(45deg, var(--primary-color), #6001F1); /* Adjusted purple gradient */
     position: relative;
     overflow: hidden;
   }
@@ -40,7 +45,7 @@
     font-size: 2rem; /* Smaller base font size */
     margin-bottom: 2rem;
     text-align: center;
-    color: #6001F1;
+    color: var(--primary-color); /* Update section titles */
   }
 
   .about-content {
@@ -173,7 +178,7 @@
   }
 
   .social-link:hover {
-    color: #00ff88;
+    color: var(--primary-color); /* Update social link hover color */
     transform: scale(1.2);
     background: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
   }
@@ -227,7 +232,7 @@
   }
 
   .phase-title {
-    color: #6001F1;
+    color: var(--primary-color);
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
@@ -242,7 +247,7 @@
     align-items: center;
     padding: 0.5rem; /* Adjusted padding */
     z-index: 1000;
-    background: #1a1a1a; /* Changed to solid background */
+    background: #1a1a1a; /* Solid background */
   }
 
   @media (max-width: 768px) {
@@ -301,7 +306,7 @@
   }
 
   .nav-link:hover {
-    color: #00ff88;
+    color: var(--primary-color);
   }
 
   html {
@@ -323,7 +328,7 @@
   }
 
   .footer a {
-    color: #6001F1;
+    color: var(--primary-color);
     text-decoration: none;
   }
 
@@ -360,7 +365,7 @@
   }
 
   .token-detail-item h3 {
-    color: #00ff88;
+    color: #7C34EB;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
   }
@@ -413,7 +418,7 @@
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #6001F1;
+    background: var(--primary-color); /* Update menu icon color */
     border-radius: 3px;
     transition: 0.25s ease-in-out;
   }
@@ -481,7 +486,7 @@
 <div class="header">
   <div style="display: flex; align-items: center;">
     <img src="4d60ca07-9bf0-4f15-aedd-f859eb985ac3.png" alt="Logo" class="header-logo">
-    <span style="color: #1BA245; font-size: 24px; margin-left: 10px; font-weight: bold;">Gembe</span>
+    <span style="color: #fff; font-size: 24px; margin-left: 10px; font-weight: bold;">Gembe</span>
   </div>
   <nav>
     <a href="#about" class="nav-link">About</a>
@@ -683,9 +688,8 @@ const createFloatingMemes = () => {
     const meme = document.createElement('div');
     meme.classList.add('meme');
     
-    // Create image element instead of SVG
     const img = document.createElement('img');
-    img.src = "Logopit_1734211245312.png";
+    img.src = "4d60ca07-9bf0-4f15-aedd-f859eb985ac3.png"; // Update floating memes to use new logo
     img.style.width = '50px';
     img.style.height = '50px';
     
