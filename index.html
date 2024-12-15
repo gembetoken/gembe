@@ -2,7 +2,7 @@
 <link rel="icon" type="image/png" href="Logopit_1734211245312.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>$MEMEFROG - The Most Ribbiting Token Ever!</title>
+<title>Gembe Token</title>
 <style>
   * {
     margin: 0;
@@ -37,7 +37,7 @@
   }
 
   .section-title {
-    font-size: 3rem;
+    font-size: 2rem; /* Smaller base font size */
     margin-bottom: 2rem;
     text-align: center;
     color: #00ff88;
@@ -47,27 +47,36 @@
     max-width: 800px;
     text-align: center;
     margin-bottom: 3rem;
+    padding: 1rem; /* Improved spacing for mobile */
   }
 
   .tokenomics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr; /* Adjust tokenomics grid for mobile */
     gap: 2rem;
     max-width: 1200px;
     width: 100%;
-    margin: 2rem 0;
+    padding: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .tokenomics-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted for larger screens */
+    }
   }
 
   .tokenomics-item {
     background: rgba(0, 255, 136, 0.1);
-    padding: 2rem;
+    padding: 1rem; /* Improved readability on mobile */
     border-radius: 15px;
     text-align: center;
   }
 
   .chart-container {
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    max-width: 300px; /* Adjust chart container size */
+    height: auto;
+    aspect-ratio: 1; /* Maintain aspect ratio */
     position: relative;
     margin: 2rem auto;
   }
@@ -127,6 +136,13 @@
     border-radius: 50%;
   }
 
+  @media (max-width: 767px) {
+    .meme img {
+      width: 30px; /* Adjust floating memes for mobile */
+      height: 30px;
+    }
+  }
+
   @keyframes float {
     0% { transform: translateY(100vh) rotate(0deg); }
     100% { transform: translateY(-100vh) rotate(360deg); }
@@ -138,15 +154,48 @@
     margin: 2rem;
   }
 
-  .social-icon {
-    width: 40px;
-    height: 40px;
-    fill: white;
-    transition: transform 0.3s;
+  .social-links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
   }
 
-  .social-icon:hover {
+  .social-link {
+    color: white;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1); /* Add background */
+    padding: 15px; /* Add padding */
+    border-radius: 12px; /* Round corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-link:hover {
+    color: #00ff88;
     transform: scale(1.2);
+    background: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
+  }
+
+  .social-link svg {
+    width: 40px; /* Make icons bigger */
+    height: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .social-link svg {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .social-links {
+      gap: 1.5rem;
+    }
+    
+    .social-link {
+      padding: 12px;
+    }
   }
 
   .roadmap {
@@ -160,18 +209,21 @@
     gap: 2rem;
     max-width: 800px;
     width: 100%;
+    padding: 1rem; /* Improved spacing for mobile */
   }
 
   .phase-card {
     background: rgba(0, 255, 136, 0.1);
-    padding: 2rem;
+    padding: 1rem; /* Improved readability on mobile */
     border-radius: 15px;
     position: relative;
     transition: transform 0.3s;
   }
 
-  .phase-card:hover {
-    transform: translateY(-5px);
+  @media (min-width: 768px) {
+    .phase-card {
+      padding: 2rem; /* Increased padding for larger screens */
+    }
   }
 
   .phase-title {
@@ -186,16 +238,41 @@
     left: 0;
     right: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: column; /* Adjust header for mobile */
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.5rem; /* Adjusted padding */
     z-index: 1000;
     background: #1a1a1a; /* Changed to solid background */
+  }
+
+  @media (max-width: 768px) {
+    .header nav {
+      display: none; /* Hide by default on mobile */
+    }
+  }
+
+  @media (min-width: 769px) {
+    .header {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+
+    .header nav {
+      display: flex;
+      flex-direction: row; /* Show navigation on desktop */
+      gap: 2rem;
+    }
+
+    .header-socials {
+      margin-top: 0;
+    }
   }
 
   .header-socials {
     display: flex;
     gap: 1rem;
+    margin-top: 1rem; /* Adjust header navigation for mobile */
   }
 
   .header-logo {
@@ -205,9 +282,31 @@
     border-radius: 50%;
   }
 
-  .header .social-icon {
-    width: 30px;
-    height: 30px;
+  .header nav {
+    margin: 1rem 0; /* Adjusted header for mobile */
+  }
+
+  .header nav {
+    display: flex;
+    flex-direction: column; /* Adjust header navigation for mobile */
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem; /* Adjusted font size for mobile */
+    transition: color 0.3s;
+  }
+
+  .nav-link:hover {
+    color: #00ff88;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Accounts for fixed header */
   }
 
   .footer {
@@ -234,12 +333,18 @@
 
   .token-details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr; /* Adjust token details grid */
     gap: 2rem;
     max-width: 1200px;
     width: 100%;
     margin: 2rem auto;
-    padding: 1rem;
+    padding: 1rem; /* Adjust token details grid */
+  }
+
+  @media (min-width: 768px) {
+    .token-details {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust token details grid */
+    }
   }
 
   .token-detail-item {
@@ -272,32 +377,102 @@
   }
 
   .hero h1 {
-    font-size: 4.5rem;
+    font-size: 2.5rem; /* Smaller base font size */
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     text-align: center;
   }
 
   .hero p {
-    font-size: 2rem;
+    font-size: 1.2rem; /* Smaller base font size */
     text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
     text-align: center;
   }
 
-  .nav-link {
+  .menu-button {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0.5rem;
+  }
+
+  .menu-icon {
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #00ff88;
+    border-radius: 3px;
+    transition: 0.25s ease-in-out;
+  }
+
+  .menu-icon span:nth-child(1) { top: 0; }
+  .menu-icon span:nth-child(2) { top: 10px; }
+  .menu-icon span:nth-child(3) { top: 20px; }
+
+  .menu-open .menu-icon span:nth-child(1) {
+    top: 10px;
+    transform: rotate(45deg);
+  }
+
+  .menu-open .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-open .menu-icon span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: #1a1a1a;
+    padding-top: 60px;
+    transition: 0.3s;
+    z-index: 1000;
+  }
+
+  .mobile-nav.active {
+    right: 0;
+  }
+
+  .mobile-nav a {
+    display: block;
+    padding: 1rem 2rem;
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s;
+    font-size: 1.2rem;
   }
 
-  .nav-link:hover {
-    color: #00ff88;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Accounts for fixed header */
+  @media (max-width: 768px) {
+    .menu-button {
+      display: block;
+    }
+    
+    .mobile-nav {
+      display: block;
+    }
+    
+    .header nav {
+      display: none;
+    }
   }
 </style>
 </head>
@@ -308,37 +483,54 @@
     <img src="Logopit_1734211245312.png" alt="Logo" class="header-logo">
     <span style="color: #1BA245; font-size: 24px; margin-left: 10px; font-weight: bold;">Gembe</span>
   </div>
-  <div class="nav-right">
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="#roadmap">Roadmap</a>
-    </div>
-    <div class="header-socials">
-      <a href="https://twitter.com/memefrog" target="_blank">
-        <svg class="social-icon" viewBox="0 0 24 24">
-          <path fill="white" d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
-        </svg>
-      </a>
-      <a href="https://t.me/memefrog" target="_blank">
-        <svg class="social-icon" viewBox="0 0 24 24">
-          <path fill="white" d="M18.384,22.779c0.322,0.228 0.737,0.285 1.107,0.145c0.37,-0.141 0.642,-0.457 0.724,-0.84c0.869,-4.084 2.977,-14.421 3.768,-18.136c0.06,-0.28 -0.04,-0.571 -0.26,-0.758c-0.22,-0.187 -0.525,-0.241 -0.797,-0.14c-4.193,1.552 -17.106,6.397 -22.384,8.35c-0.335,0.124 -0.553,0.446 -0.542,0.799c0.012,0.354 0.25,0.661 0.593,0.764c2.367,0.708 5.474,1.693 5.474,1.693c0,0 1.452,4.385 2.209,6.615c0.095,0.28 0.314,0.5 0.603,0.576c0.288,0.075 0.596,-0.004 0.811,-0.207c1.216,-1.148 3.096,-2.923 3.096,-2.923c0,0 3.572,2.619 5.598,4.062Zm-11.01,-8.677l1.679,5.538l0.373,-3.507c0,0 6.487,-5.851 10.185,-9.186c0.108,-0.098 0.123,-0.262 0.033,-0.377c-0.089,-0.115 -0.253,-0.142 -0.376,-0.064c-4.286,2.737 -11.894,7.596 -11.894,7.596Z"/>
-        </svg>
-      </a>
-    </div>
+  <nav>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#tokenomics" class="nav-link">Tokenomics</a>
+    <a href="#roadmap" class="nav-link">Roadmap</a>
+  </nav>
+</div>
+
+<button class="menu-button">
+  <div class="menu-icon">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
+</button>
+
+<div class="mobile-nav">
+  <a href="#about">About</a>
+  <a href="#tokenomics">Tokenomics</a>
+  <a href="#roadmap">Roadmap</a>
 </div>
 
 <div class="hero">
   <div class="floating-memes"></div>
-  <h1>$MEMEFROG</h1>
+  <h1>Gembe</h1>
   <p>The Most Ribbiting Token in Crypto!</p>
+  <div class="social-links">
+    <a href="https://twitter.com" target="_blank" class="social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+    <a href="https://telegram.org" target="_blank" class="social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+      </svg>
+    </a>
+    <a href="https://quickswap.exchange" target="_blank" class="social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21.87 11.52c-.217-.528-.542-.981-.957-1.337-.415-.356-.91-.607-1.446-.738-.537-.131-1.095-.152-1.64-.063-.312-.663-.777-1.233-1.354-1.663-.577-.43-1.246-.707-1.946-.809-.701-.102-1.417-.023-2.084.229-.667.252-1.267.66-1.75 1.191-.691-.476-1.498-.735-2.323-.747-.825-.012-1.638.222-2.344.677-.706.455-1.27 1.112-1.628 1.898s-.489 1.666-.351 2.522H3.34c-.577 0-1.13.229-1.538.636-.408.408-.636.961-.636 1.538 0 .577.228 1.13.636 1.538.408.407.961.636 1.538.636h14.771l.001-.001c.577 0 1.13-.228 1.538-.636.408-.408.636-.961.636-1.538 0-.577-.229-1.13-.636-1.538l-.258-.258c.304-.613.471-1.287.49-1.974.019-.687-.116-1.369-.391-1.996zM5.785 11.97a2.253 2.253 0 0 1-.304-1.279c0-.452.134-.894.385-1.271.251-.376.608-.669 1.023-.84.414-.172.871-.212 1.31-.116.438.096.837.321 1.149.647a.215.215 0 0 0 .088.054c.034.01.07.01.104 0a.214.214 0 0 0 .088-.054c.26-.272.571-.486.914-.628.343-.142.71-.209 1.079-.197.369.012.731.101 1.064.262.333.16.629.392.871.678s.415.621.514.981c.053.195.208.336.389.355.535.056 1.045.244 1.483.547.438.303.798.714 1.049 1.194.251.48.386 1.016.392 1.562.006.546-.117 1.085-.358 1.571H3.941c-.148 0-.29-.059-.394-.163s-.163-.246-.163-.394.059-.29.163-.394l.394-.394 1.844-1.844c.104-.104.245-.162.393-.162.147 0 .289.058.393.162.104.104.162.246.162.394 0 .147-.058.289-.162.393l-1.188 1.187h2.906l2.063-2.062a2.252 2.252 0 0 1-.162-2.55 2.244 2.244 0 0 1 1.023-.84c.414-.172.871-.212 1.31-.116s.837.321 1.149.647a.214.214 0 0 0 .302 0c.312-.326.711-.551 1.149-.647.439-.096.896-.056 1.31.116s.772.464 1.023.84c.251.377.385.819.385 1.271s-.134.894-.385 1.271c-.251.377-.608.67-1.023.841-.414.171-.871.212-1.31.116-.438-.096-.837-.321-1.149-.647l-3.28 3.279H3.34c-.148 0-.29-.059-.394-.163s-.163-.246-.163-.394c0-.148.059-.29.163-.394l.394-.394 1.844-1.844c.104-.104.246-.162.393-.162.148 0 .289.058.393.162.104.104.163.246.163.394s-.059.289-.163.393l-1.187 1.187h2.906l2.062-2.062c-.272-.321-.469-.699-.579-1.108-.11-.409-.131-.836-.062-1.254s.228-.815.461-1.17.542-.647.905-.864z"/>
+      </svg>
+    </a>
+  </div>
 </div>
 
 <div class="about" id="about">
   <h2 class="section-title">About</h2>
   <div class="about-content">
-    <p>We opted for Polygon due to its speed, scalability, and incredibly low transaction costs. Thanks to these advantages, Gembe offers a fluid and accessible experience for all our users. Furthermore, being integrated with Ethereum, Polygon connects us to a strong and constantly expanding ecosystem, allowing us to continue growing without problems. With Polygon, your transactions are quick and inexpensive, ensuring that enjoying Gembe is even easier and more fun..</p>
+    <p>We opted for Polygon due to its speed, scalability, and incredibly low transaction costs. Thanks to these advantages, Gembe offers a fluid and accessible experience for all our users. Furthermore, being integrated with Ethereum, Polygon connects us to a strong and constantly expanding ecosystem, allowing us to continue growing without problems. With Polygon, your transactions are quick and inexpensive, ensuring that enjoying Gembe is even easier and more fun.</p>
     <br>
     <p>With our unique "Lily Pad" staking system and "Tadpole" reward mechanism, we're creating an ecosystem that's both fun and rewarding for our holders.</p>
   </div>
@@ -520,17 +712,4 @@ document.querySelectorAll('.pie-segment').forEach(segment => {
 
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  });
-});
-</script>
-
-</body></html>
+  anchor.addEventListener('click', function (e) 
