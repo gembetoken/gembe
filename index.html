@@ -712,4 +712,55 @@ document.querySelectorAll('.pie-segment').forEach(segment => {
 
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) 
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Mobile menu functionality
+const menuButton = document.querySelector('.menu-button');
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+// Toggle menu
+const toggleMenu = () => {
+  menuButton.classList.toggle('menu-open');
+  mobileNav.classList.toggle('active');
+  document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+};
+
+menuButton.addEventListener('click', (e) => {
+  e.stopPropagation();
+  toggleMenu();
+});
+
+// Close menu when clicking links
+mobileNavLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    toggleMenu();
+  });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (mobileNav.classList.contains('active') && 
+      !mobileNav.contains(e.target) && 
+      !menuButton.contains(e.target)) {
+    toggleMenu();
+  }
+});
+
+// Prevent menu from closing when clicking inside
+mobileNav.addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+</script>
+
+</body></html>
