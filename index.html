@@ -1,6 +1,33 @@
-<html><head><base href="/" />
-<link rel="icon" type="image/png" href="imag.png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gembe Token</title>
-  <p>Soon</p>
+<!DOCTYPE html>
+<html lang="in">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto Animado con Colores</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .animated-text {
+            color: white;
+            font-size: 3em;
+            animation: colorChange 2s infinite;
+        }
+        @keyframes colorChange {
+            0% { color: red; }
+            25% { color: yellow; }
+            50% { color: green; }
+            75% { color: blue; }
+            100% { color: red; }
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-text">Texto Animado</div>
+</body>
+</html>
