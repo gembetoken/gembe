@@ -1,34 +1,72 @@
-<!DOCTYPE html>
-<html lang="in">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html><head><base href="https://www.google.com" />
     <meta name="theme-color" content="#56315A">
-    <title>Gembe Token</title>
     <style>
-        body {
-            background-color: #56315A;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .animated-text {
-            color: white;
-            font-size: 100px;
-            animation: colorChange 2s infinite;
-        }
-        @keyframes colorChange {
-            0% { color: red; }
-            25% { color: yellow; }
-            50% { color: green; }
-            75% { color: blue; }
-            100% { color: red; }
-        }
-    </style>
-</head>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #1a1a2e, #16213e);
+    overflow: hidden;
+}
+
+.text {
+    color: white;
+    font-size: 5rem;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.snowflake {
+    position: fixed;
+    color: white;
+    pointer-events: none;
+    top: -20px; /* Start above the viewport */
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+</style></head>
 <body>
-    <div class="animated-text">Soon</div>
-</body>
-</html>
+    <div class="text">Soon</div>
+
+<script>
+function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.innerHTML = '❄';
+    snowflake.style.left = Math.random() * 100 + 'vw';
+    snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+    snowflake.style.opacity = Math.random();
+    snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+    
+    document.body.appendChild(snowflake);
+
+    // Remove the snowflake after animation ends
+    setTimeout(() => {
+        snowflake.remove();
+    }, 5000);
+}
+
+// Create snowflakes at regular intervals
+setInterval(createSnowflake, 100);
+</script>
+</body></html>
