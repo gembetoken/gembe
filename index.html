@@ -1,73 +1,785 @@
-<html><head><base href="https://www.google.com" />
-    <meta name="theme-color" content="#56315A">
-    <meta name="description" content="Esta es una descripción de ejemplo para la página web.">
-    <style>
-body {
+<html><head><base href="/" />
+<link rel="icon" type="image/png" href="4d60ca07-9bf0-4f15-aedd-f859eb985ac3.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gembe Token</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+
+  * {
     margin: 0;
-    height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Coiny', cursive;
+  }
+
+  body {
+    background: #1a1a1a;
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  :root {
+    --primary-color: #6E0FFF; /* New purple color to match logo */
+    --secondary-color: #7C34EB; /* Keeping the green accent */
+  }
+
+  .hero, .about, .tokenomics, .roadmap {
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background: linear-gradient(to bottom, #1a1a2e, #16213e);
-    overflow: hidden;
-}
+    justify-content: center;
+    padding: 4rem 2rem;
+  }
 
-.text {
-    color: white;
-    font-size: 5rem;
-    font-family: Arial, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 10px;
+  .hero {
+    background: linear-gradient(45deg, var(--primary-color), #6001F1); /* Adjusted purple gradient */
     position: relative;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    animation: pulse 2s infinite;
-}
+    overflow: hidden;
+  }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
+  .about, .tokenomics, .roadmap {
+    background: #1a1a1a;
+  }
 
-.snowflake {
-    position: fixed;
-    color: white;
+  .section-title {
+    font-size: 2rem; /* Smaller base font size */
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--primary-color); /* Update section titles */
+  }
+
+  .about-content {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1rem; /* Improved spacing for mobile */
+  }
+
+  .tokenomics-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Adjust tokenomics grid for mobile */
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .tokenomics-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted for larger screens */
+    }
+  }
+
+  .tokenomics-item {
+    background: rgb(96, 1, 241);
+    padding: 1rem; /* Improved readability on mobile */
+    border-radius: 15px;
+    text-align: center;
+  }
+
+  .tokenomics-item h3 {
+    color: #fff; /* Change from default to white */
+  }
+
+  .chart-container {
+    width: 100%;
+    max-width: 300px; /* Adjust chart container size */
+    height: auto;
+    aspect-ratio: 1; /* Maintain aspect ratio */
+    position: relative;
+    margin: 2rem auto;
+  }
+
+  .pie-segment {
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+  }
+
+  .pie-segment:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(0,0,0,0.5));
+  }
+
+  .pie-label {
+    font-size: 16px;
+    fill: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .contract-address {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 0.9rem;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .floating-memes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     pointer-events: none;
-    top: -20px; /* Start above the viewport */
-    animation: fall linear infinite;
-}
+    overflow: hidden;
+  }
 
-@keyframes fall {
-    from {
-        transform: translateY(0);
+  .meme {
+    position: absolute;
+    animation: float 20s linear infinite;
+  }
+
+  .meme img {
+    width: 50px;
+    height: 50px;
+    opacity: 0.1;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 767px) {
+    .meme img {
+      width: 30px; /* Adjust floating memes for mobile */
+      height: 30px;
     }
-    to {
-        transform: translateY(100vh);
+  }
+
+  @keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(360deg); }
+  }
+
+  .socials {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+
+  .social-link {
+    color: white;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1); /* Add background */
+    padding: 15px; /* Add padding */
+    border-radius: 12px; /* Round corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-link:hover {
+    color: var(--primary-color); /* Update social link hover color */
+    transform: scale(1.2);
+    background: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
+  }
+
+  .social-link svg {
+    width: 40px; /* Make icons bigger */
+    height: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .social-link svg {
+      width: 35px;
+      height: 35px;
     }
-}
-</style></head>
+    
+    .social-links {
+      gap: 1.5rem;
+    }
+    
+    .social-link {
+      padding: 12px;
+    }
+  }
+
+  .roadmap {
+    background: #1a1a1a;
+    position: relative;
+  }
+
+  .roadmap-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    width: 100%;
+    padding: 1rem; /* Improved spacing for mobile */
+  }
+
+  .phase-card {
+    background: rgb(96, 1, 241);
+    padding: 1rem; /* Improved readability on mobile */
+    border-radius: 15px;
+    position: relative;
+    transition: transform 0.3s;
+  }
+
+  @media (min-width: 768px) {
+    .phase-card {
+      padding: 2rem; /* Increased padding for larger screens */
+    }
+  }
+
+  .phase-title {
+    color: #fff; /* Change from var(--primary-color) to white */
+    font-size: 1.8rem; /* Slightly larger font size */
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: column; /* Adjust header for mobile */
+    align-items: center;
+    padding: 0.5rem; /* Adjusted padding */
+    z-index: 1000;
+    background: #1a1a1a; /* Solid background */
+  }
+
+  @media (max-width: 768px) {
+    .header nav {
+      display: none; /* Hide by default on mobile */
+    }
+  }
+
+  @media (min-width: 769px) {
+    .header {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+
+    .header nav {
+      display: flex;
+      flex-direction: row; /* Show navigation on desktop */
+      gap: 2rem;
+    }
+
+    .header-socials {
+      margin-top: 0;
+    }
+  }
+
+  .header-socials {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem; /* Adjust header navigation for mobile */
+  }
+
+  .header-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  .header nav {
+    margin: 1rem 0; /* Adjusted header for mobile */
+  }
+
+  .header nav {
+    display: flex;
+    flex-direction: column; /* Adjust header navigation for mobile */
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem; /* Adjusted font size for mobile */
+    transition: color 0.3s;
+  }
+
+  .nav-link:hover {
+    color: var(--primary-color);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Accounts for fixed header */
+  }
+
+  .footer {
+    background: #1a1a1a;
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer p {
+    color: #999;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+
+  .footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .token-details {
+    display: grid;
+    grid-template-columns: 1fr; /* Adjust token details grid */
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 1rem; /* Adjust token details grid */
+  }
+
+  @media (min-width: 768px) {
+    .token-details {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust token details grid */
+    }
+  }
+
+  .token-detail-item {
+    background: rgb(96, 1, 241);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .token-detail-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .token-detail-item h3 {
+    color: #fff; /* Change from #7C34EB to white */
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .token-detail-item p {
+    font-size: 1.1rem;
+    word-break: break-all;
+  }
+
+  .contract-text {
+    font-family: monospace;
+    word-break: break-all;
+    font-size: 0.9rem !important;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem; /* Smaller base font size */
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 1.2rem; /* Smaller base font size */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+
+  .buy-button {
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Coiny', cursive;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .buy-button:hover {
+    transform: scale(1.05);
+    background: #f0f0f0;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+
+  .menu-button {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0.5rem;
+  }
+
+  .menu-icon {
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--primary-color); /* Update menu icon color */
+    border-radius: 3px;
+    transition: 0.25s ease-in-out;
+  }
+
+  .menu-icon span:nth-child(1) { top: 0; }
+  .menu-icon span:nth-child(2) { top: 10px; }
+  .menu-icon span:nth-child(3) { top: 20px; }
+
+  .menu-open .menu-icon span:nth-child(1) {
+    top: 10px;
+    transform: rotate(45deg);
+  }
+
+  .menu-open .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-open .menu-icon span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: #1a1a1a;
+    padding-top: 60px;
+    transition: 0.3s;
+    z-index: 1000;
+  }
+
+  .mobile-nav.active {
+    right: 0;
+  }
+
+  .mobile-nav a {
+    display: block;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .menu-button {
+      display: block;
+    }
+    
+    .mobile-nav {
+      display: block;
+    }
+    
+    .header nav {
+      display: none;
+    }
+  }
+</style>
+</head>
 <body>
-    <div class="text">Soon</div>
+
+<div class="header">
+  <div style="display: flex; align-items: center;">
+    <img src="4d60ca07-9bf0-4f15-aedd-f859eb985ac3.png" alt="Logo" class="header-logo">
+    <span style="color: #fff; font-size: 24px; margin-left: 10px; font-weight: bold;">Gembe</span>
+  </div>
+  <nav>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#tokenomics" class="nav-link">Tokenomics</a>
+    <a href="#roadmap" class="nav-link">Roadmap</a>
+  </nav>
+</div>
+
+<button class="menu-button">
+  <div class="menu-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</button>
+
+<div class="mobile-nav">
+  <a href="#about">About</a>
+  <a href="#tokenomics">Tokenomics</a>
+  <a href="#roadmap">Roadmap</a>
+</div>
+
+<div class="hero">
+  <div class="floating-memes"></div>
+  <h1>Gembe</h1>
+  <p>The Most Ribbiting Token in Crypto!</p>
+  <div class="social-links">
+    <a href="https://twitter.com/gembetoken" target="_blank" class="social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+    <a href="https://t.me/gembe_announcements" target="_blank" class="social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+      </svg>
+    </a>
+  </div>
+  <a href="https://quickswap.exchange/#/swap?currency0=ETH&currency1=0xdAD4565A4e722F2b38F21D4D1f524ed0Cd457532&swapIndex=0" target="_blank" class="buy-button">
+    Buy Now
+  </a>
+</div>
+
+<div class="about" id="about">
+  <h2 class="section-title">About</h2>
+  <div class="about-content">
+    <p>We opted for Polygon due to its speed, scalability, and incredibly low transaction costs. Thanks to these advantages, Gembe offers a fluid and accessible experience for all our users. Furthermore, being integrated with Ethereum, Polygon connects us to a strong and constantly expanding ecosystem, allowing us to continue growing without problems. With Polygon, your transactions are quick and inexpensive, ensuring that enjoying Gembe is even easier and more fun.</p>
+    <br>
+  
+  </div>
+</div>
+
+<div class="tokenomics" id="tokenomics">
+  <h2 class="section-title">Tokenomics</h2>
+  <div class="chart-container">
+    <svg viewBox="0 0 100 100">
+      <!-- Background circle -->
+      <circle cx="50" cy="50" r="45" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+      
+      <!-- Airdrop - 65% -->
+      <path class="pie-segment" 
+            d="M50,50 L95,50 A45,45 0 1,1 27.5,6.5 L50,50"
+            fill="#6001F1"
+            stroke="#1a1a1a"
+            stroke-width="1">
+        <title>Airdrop: 65%</title>
+      </path>
+      
+      <!-- Reserves & Liquidity - 5% -->
+      <path class="pie-segment"
+            d="M50,50 L27.5,6.5 A45,45 0 0,1 50.5,5 L50,50"
+            fill="#ff3366"
+            stroke="#1a1a1a"
+            stroke-width="1">
+        <title>Reserves & Liquidity: 10%</title>
+      </path>
+      
+      <!-- Marketing - 15% -->
+      <path class="pie-segment"
+            d="M50,50 L50.5,5 A45,45 0 0,1 69,11 L50,50"
+            fill="#00ccff"
+            stroke="#1a1a1a"
+            stroke-width="1">
+        <title>Marketing: 15%</title>
+      </path>
+      
+      <!-- Team - 10% -->
+      <path class="pie-segment"
+            d="M50,50 L69,11 A45,45 0 0,1 95,50 L50,50"
+            fill="#ffcc00"
+            stroke="#1a1a1a"
+            stroke-width="1">
+        <title>Team: 10%</title>
+      </path>
+
+      <!-- Center circle -->
+      <circle cx="50" cy="50" r="25" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+      
+      <!-- Labels -->
+      <text x="50" y="45" class="pie-label" text-anchor="middle">Total</text>
+      <text x="50" y="60" class="pie-label" text-anchor="middle">Supply</text>
+    </svg>
+  </div>
+  <div class="token-details">
+    <div class="token-detail-item">
+      <h3>Name</h3>
+      <p>Gembe</p>
+    </div>
+    <div class="token-detail-item">
+      <h3>Symbol</h3>
+      <p>GMB</p>
+    </div>
+    <div class="token-detail-item">
+      <h3>Total Supply</h3>
+      <p>420T</p>
+    </div>
+    <div class="token-detail-item">
+      <h3>Contract</h3>
+      <p class="contract-text">0xdAD4565A4e722F2b38F21D4D1f524ed0Cd457532</p>
+    </div>
+    <div class="token-detail-item">
+      <h3>Tax</h3>
+      <p>0%</p>
+    </div>
+  </div>
+  <div class="tokenomics-grid">
+  <div class="tokenomics-grid">
+    <div class="tokenomics-item">
+      <h3>Airdrop</h3>
+      <p>70%</p>
+      <p>Community Distribution</p>
+      <p>Rewarding early supporters and building community</p>
+    </div>
+    <div class="tokenomics-item">
+      <h3>Marketing</h3>
+      <p>15%</p>
+      <p>For growth & development</p>
+      <p>Strategic promotion and partnerships</p>
+    </div>
+    <div class="tokenomics-item">
+      <h3>Team</h3>
+      <p>10%</p>
+      
+      <p>For long-term project development and maintenance</p>
+    </div> 
+    <div class="tokenomics-item">
+      <h3>Reserves & Liquidity</h3>
+      <p>5%</p>
+      
+      <p>Ensuring stable trading and long-term sustainability</p>
+    </div>
+  </div>
+</div>
+
+<div class="roadmap" id="roadmap">
+  <h2 class="section-title">Roadmap</h2>
+  <div class="roadmap-container">
+    <div class="phase-card">
+      <h3 class="phase-title">Launch</h3>
+      <p>Launch our viral meme campaign and establish $Gembe as the most ribbiting token in the cryptosphere!</p>
+    </div>
+    
+    <div class="phase-card">
+      <h3 class="phase-title">Growth</h3>
+      <p>Build our community with diamond hands and create the strongest vibe in crypto!</p>
+    </div>
+    
+    <div class="phase-card">
+      <h3 class="phase-title">Expansion</h3>
+      <p>Complete global meme dominance as $Gembe becomes the ultimate cryptocurrency meme!</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Contact us: info@gembetoken.com</p>
+  <p>Copyright © 2024 Gembe Token. All rights reserved.</p>
+</div>
 
 <script>
-function createSnowflake() {
-    const snowflake = document.createElement('div');
-    snowflake.classList.add('snowflake');
-    snowflake.innerHTML = '.';
-    snowflake.style.left = Math.random() * 100 + 'vw';
-    snowflake.style.animationDuration = Math.random() * 6 + 4 + 's';
-    snowflake.style.opacity = Math.random();
-    snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+const createFloatingMemes = () => {
+  const memeContainer = document.querySelector('.floating-memes');
+  const memeCount = 20;
+
+  for (let i = 0; i < memeCount; i++) {
+    const meme = document.createElement('div');
+    meme.classList.add('meme');
     
-    document.body.appendChild(snowflake);
+    const img = document.createElement('img');
+    img.src = "4d60ca07-9bf0-4f15-aedd-f859eb985ac3.png"; // Update floating memes to use new logo
+    img.style.width = '50px';
+    img.style.height = '50px';
+    
+    meme.appendChild(img);
+    
+    meme.style.left = `${Math.random() * 100}vw`;
+    meme.style.animationDelay = `${Math.random() * 20}s`;
+    
+    memeContainer.appendChild(meme);
+  }
+};
 
-    // Remove the snowflake after animation ends
-    setTimeout(() => {
-        snowflake.remove();
-    }, 5000);
-}
+createFloatingMemes();
 
-// Create snowflakes at regular intervals
-setInterval(createSnowflake, 100);
+// Add hover effects for pie chart segments
+document.querySelectorAll('.pie-segment').forEach(segment => {
+  segment.addEventListener('mouseover', () => {
+    segment.style.opacity = '0.8';
+  });
+  segment.addEventListener('mouseout', () => {
+    segment.style.opacity = '1';
+  });
+});
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Mobile menu functionality
+const menuButton = document.querySelector('.menu-button');
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+// Toggle menu
+const toggleMenu = () => {
+  menuButton.classList.toggle('menu-open');
+  mobileNav.classList.toggle('active');
+  document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+};
+
+menuButton.addEventListener('click', (e) => {
+  e.stopPropagation();
+  toggleMenu();
+});
+
+// Close menu when clicking links
+mobileNavLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    toggleMenu();
+  });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (mobileNav.classList.contains('active') && 
+      !mobileNav.contains(e.target) && 
+      !menuButton.contains(e.target)) {
+    toggleMenu();
+  }
+});
+
+// Prevent menu from closing when clicking inside
+mobileNav.addEventListener('click', (e) => {
+  e.stopPropagation();
+});
 </script>
+
 </body></html>
