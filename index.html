@@ -23,6 +23,31 @@
         --primary-color: #83187a; /* New purple color to match logo */
         --secondary-color: #ffffff; /* Keeping the green accent */
       }
+
+      @keyframes pulse { 
+    0% { transform: scale(1); } 
+    50% { transform: scale(1.1); } 
+    100% { transform: scale(1); } 
+} 
+ 
+.snowflake { 
+    position: fixed; 
+    color: white; 
+    pointer-events: none; 
+    top: -20px; /* Start above the viewport */ 
+    animation: fall linear infinite; 
+} 
+ 
+@keyframes fall { 
+    from { 
+        transform: translateY(0); 
+    } 
+    to { 
+        transform: translateY(100vh); 
+    } 
+} 
+
+
     
       .hero, .about, .tokenomics, .roadmap {
         min-height: 100vh;
@@ -781,6 +806,28 @@
     mobileNav.addEventListener('click', (e) => {
       e.stopPropagation();
     });
+
+    function createSnowflake() { 
+    const snowflake = document.createElement('div'); 
+    snowflake.classList.add('snowflake'); 
+    snowflake.innerHTML = '.'; 
+    snowflake.style.left = Math.random() * 100 + 'vw'; 
+    snowflake.style.animationDuration = Math.random() * 6 + 4 + 's'; 
+    snowflake.style.opacity = Math.random(); 
+    snowflake.style.fontSize = Math.random() * 20 + 10 + 'px'; 
+     
+    document.body.appendChild(snowflake); 
+ 
+    // Remove the snowflake after animation ends 
+    setTimeout(() => { 
+        snowflake.remove(); 
+    }, 5000); 
+} 
+ 
+// Create snowflakes at regular intervals 
+setInterval(createSnowflake, 100); 
+
+
     </script>
     
     </body></html>
